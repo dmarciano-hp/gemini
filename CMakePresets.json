@@ -1,0 +1,83 @@
+{
+ "version": 6,
+ "cmakeMinimumRequired": {
+   "major": 3,
+   "minor": 23,
+   "patch": 0
+ },
+ "configurePresets": [
+   {
+        "name": "default",
+        "displayName": "Default Config",
+        "description": "Default build using Ninja generator",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/${presetName}",
+        "cacheVariables": {
+            "CFG_CORE": "M4",
+            "CFG_BUILD_TYPE": "DEV",
+            "FIRST_CACHE_VARIABLE": {
+                "type": "BOOL",
+                "value": "OFF"
+            },
+            "SECOND_CACHE_VARIABLE": "ON"
+        },
+        "environment": {
+            "MY_ENVIRONMENT_VARIABLE": "Test",
+            "PATH": "$env{HOME}/ninja/bin:$penv{PATH}"
+        }
+   },
+   {
+       "name": "cm4_build_dev",
+       "inherits": [ "default" ],
+       "cacheVariables": {
+           "CFG_CORE": "M4"
+       }
+   },
+   {
+       "name": "cm7_build_dev",
+       "inherits": [ "default" ],
+       "cacheVariables": {
+           "CFG_CORE": "CORE_M7"
+       }
+   },
+   {
+        "name": "debug",
+        "inherits": [ "default" ],
+        "binaryDir": "${sourceDir}/build/ci-${presetName}",
+        "cacheVariables": {
+            "CFG_BUILD_TYPE": "Debug",
+            "FIRST_CACHE_VARIABLE": "ON"
+     }
+   },
+   {
+        "name": "release",
+        "inherits": [ "default" ],
+        "binaryDir": "${sourceDir}/build/ci-${presetName}",
+        "cacheVariables": {
+            "CFG_BUILD_TYPE": "Release"
+        }
+   }
+ ],
+ "buildPresets": [
+   {
+     "name": "default",
+     "configurePreset": "default"
+   },
+   {
+      "name": "cm4_build_dev",
+      "configurePreset": "cm4_build_dev"
+   },
+   {
+      "name": "cm7_build_dev",
+      "configurePreset": "cm7_build_dev"
+   },
+   {
+      "name": "debug",
+      "configurePreset": "debug"
+    },
+    {
+      "name": "release",
+      "configurePreset": "release"
+    }
+ ]
+}
