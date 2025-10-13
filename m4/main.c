@@ -1,5 +1,6 @@
 #include "stm32h745xx.h"
 #include <stdint.h>
+#include <stdio.h>
 
 #define LOOP_ITERATIONS 1000
 

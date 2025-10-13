@@ -18,11 +18,15 @@ else
     echo "  2: CM7 Build Development"
 fi
 
-rm -rf build/$PRESET_NAME
+BUILD_DIR=build
+OUTPUT_DIR=build/$PRESET_NAME
 
-mkdir -p build/$PRESET_NAME
+if [ ! -d "$BUILD_DIR" ]; then
+    mkdir -p $BUILD_DIR
+fi
 
-cmake --preset $PRESET_NAME
-cmake --build build/$PRESET_NAME --target clean
+# cmake --preset $PRESET_NAME
+cmake -B $OUTPUT_DIR --preset $PRESET_NAME
+cmake --build $OUTPUT_DIR --target all -- -j 8
 
 # Python script to combine 2 binaries for flashing
