@@ -30,7 +30,7 @@
        "name": "cm7_build_dev",
        "inherits": [ "default" ],
        "cacheVariables": {
-           "CFG_CORE": "CORE_M7"
+           "CFG_CORE": "M7"
        }
    },
    {
