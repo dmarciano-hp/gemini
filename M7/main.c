@@ -1,8 +1,19 @@
 #include "stm32h745xx.h"
 
+#include <stdint.h>
+
+#define LOOP_ITERATIONS 2000
+
 int main(void) {
-    // Basic M7 core setup
-    while (1) {
-        // Toggle an LED or increment a counter
+    // Basic M4 core setup
+    uint32_t tempVal = 0;
+    while( tempVal < LOOP_ITERATIONS ) {
+
+        tempVal++;
+        if( LOOP_ITERATIONS == tempVal )
+        {
+            // Toggle an LED or increment a counter
+            tempVal = 0;
+        }
     }
 }

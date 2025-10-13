@@ -15,16 +15,8 @@
         "toolchainFile": "${sourceDir}/cmake/arm_gcc_toolchain.cmake",
         "cacheVariables": {
             "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
-            "CMAKE_C_COMPILER": "/usr/bin/arm-none-eabi-gcc",
-            "CMAKE_CXX_COMPILER": "/usr/bin/arm-none-eabi-g++",
-            "CMAKE_ASM_COMPILER": "/usr/bin/arm-none-eabi-gcc",
             "CFG_CORE": "M4",
-            "CFG_BUILD_TYPE": "DEV",
-            "FIRST_CACHE_VARIABLE": {
-                "type": "BOOL",
-                "value": "OFF"
-            },
-            "SECOND_CACHE_VARIABLE": "ON"
+            "CFG_BUILD_TYPE": "DEV"
         }
    },
    {
@@ -46,8 +38,7 @@
         "inherits": [ "default" ],
         "binaryDir": "${sourceDir}/build/ci-${presetName}",
         "cacheVariables": {
-            "CFG_BUILD_TYPE": "Debug",
-            "FIRST_CACHE_VARIABLE": "ON"
+            "CFG_BUILD_TYPE": "Debug"
      }
    },
    {
