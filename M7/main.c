@@ -12,6 +12,7 @@ int main(void) {
         tempVal++;
         if( LOOP_ITERATIONS == tempVal )
         {
+            printf("Running on M7 core\n");
             // Toggle an LED or increment a counter
             tempVal = 0;
         }

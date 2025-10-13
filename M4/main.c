@@ -13,6 +13,7 @@ int main(void) {
         {
             // Toggle an LED or increment a counter
 #ifdef DEV_BUILD
+            printf("Running on M4 core\n");
             printf("Iteration count: %d iterations\n", tempVal);
 #endif // DEV_BUILD
             tempVal = 0;
