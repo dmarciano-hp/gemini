@@ -9,10 +9,15 @@
    {
         "name": "default",
         "displayName": "Default Config",
-        "description": "Default build using Ninja generator",
-        "generator": "Ninja",
+        "description": "Default build using Unix Makefiles",
+        "generator": "Unix Makefiles",
         "binaryDir": "${sourceDir}/build/${presetName}",
+        "toolchainFile": "${sourceDir}/cmake/arm_gcc_toolchain.cmake",
         "cacheVariables": {
+            "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
+            "CMAKE_C_COMPILER": "/usr/bin/arm-none-eabi-gcc",
+            "CMAKE_CXX_COMPILER": "/usr/bin/arm-none-eabi-g++",
+            "CMAKE_ASM_COMPILER": "/usr/bin/arm-none-eabi-gcc",
             "CFG_CORE": "M4",
             "CFG_BUILD_TYPE": "DEV",
             "FIRST_CACHE_VARIABLE": {
@@ -20,10 +25,6 @@
                 "value": "OFF"
             },
             "SECOND_CACHE_VARIABLE": "ON"
-        },
-        "environment": {
-            "MY_ENVIRONMENT_VARIABLE": "Test",
-            "PATH": "$env{HOME}/ninja/bin:$penv{PATH}"
         }
    },
    {
