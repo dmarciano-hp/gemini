@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.15)
 set(PROJECT_NAME gemini)
 project(${PROJECT_NAME} LANGUAGES C CXX ASM)
 
+add_executable(${PROJECT_NAME} ${CFG_CORE}/main.c)
 
 if(CFG_BUILD_TYPE STREQUAL "DEV")
     message(STATUS "Configuring for Development build")
@@ -17,7 +18,6 @@ else()
     message(FATAL_ERROR "Unknown build type specified. Please set CFG_BUILD_TYPE to either 'DEV', 'Debug', or 'Release'.")
 endif()
 
-add_executable(${PROJECT_NAME} m4/main.c)
 
 if(CFG_CORE)
     message(STATUS "Configuring for ${CFG_CORE} core")
