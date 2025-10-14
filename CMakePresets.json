@@ -12,10 +12,10 @@
         "description": "Default build using Unix Makefiles",
         "generator": "Unix Makefiles",
         "binaryDir": "${sourceDir}/build/${presetName}",
-        "toolchainFile": "${sourceDir}/cmake/arm_gcc_toolchain.cmake",
+        "toolchainFile": "${sourceDir}/cmake/toolchain/arm_gcc_toolchain.cmake",
         "cacheVariables": {
             "CMAKE_MAKE_PROGRAM": "/usr/bin/make",
-            "CFG_CORE": "M4",
+            "CFG_CORE": "m4",
             "CFG_BUILD_TYPE": "DEV"
         }
    },
@@ -23,14 +23,14 @@
        "name": "cm4_build_dev",
        "inherits": [ "default" ],
        "cacheVariables": {
-           "CFG_CORE": "M4"
+           "CFG_CORE": "m4"
        }
    },
    {
        "name": "cm7_build_dev",
        "inherits": [ "default" ],
        "cacheVariables": {
-           "CFG_CORE": "M7"
+           "CFG_CORE": "m7"
        }
    },
    {
