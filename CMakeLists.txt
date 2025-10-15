@@ -38,6 +38,8 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/lib/STM32H7xx_HAL_Driver/Inc
 )
 
+set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_SCRIPT "${CMAKE_SOURCE_DIR}/board/linker/STM32H745XI_${CFG_CORE}_flash.ld")
+
 include("cmake/compile_options/compile_options_${CFG_CORE}.cmake")
 
 include("cmake/compile_options/common_options.cmake")
